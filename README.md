@@ -34,6 +34,11 @@ Browser → http://localhost:8082  (Neuron UI)
 
 ---
 
+![Neuron Chat UI](docs/screenshot.jpg)
+
+
+
+
 ## 🎯 Features
 
 - **Zero telemetry** — everything stays on your machine
