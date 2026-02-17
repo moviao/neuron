@@ -29,7 +29,7 @@ Browser → http://localhost:8082  (Neuron UI)
                   ↕  /api/chat, /api/models
         Quarkus Backend  (port 8082)
                   ↕  OpenAI-compatible REST
-        Local LLM Server (port 8080)
+        Local LLM Server (port 8081)
 ```
 
 ---
