@@ -306,14 +306,15 @@ When running in dev mode, Quarkus provides its **Dev UI** at `http://localhost:8
 
 ## 🔧 Compatible LLM Servers
 
-| Server | Default port | Configuration |
-|---|---|---|
-| [Ollama](https://ollama.ai) | `11434` | `llm.api.url=http://localhost:11434` |
-| [llama.cpp server](https://github.com/ggerganov/llama.cpp) | `8080` | Works out of the box |
-| [LM Studio](https://lmstudio.ai) | `1234` | `llm.api.url=http://localhost:1234` |
-| [Jan](https://jan.ai) | `1337` | `llm.api.url=http://localhost:1337` |
-| [vLLM](https://github.com/vllm-project/vllm) | `8000` | `llm.api.url=http://localhost:8000` |
-| Any OpenAI-compatible | custom | Point `llm.api.url` at it |
+| Server                                                     | Default port | Configuration                        |
+|------------------------------------------------------------|--------------|--------------------------------------|
+| [Kortex](https://github.com/moviao/kortex)                 | `8081`       | `llm.api.url=http://localhost:8081`  |
+| [Ollama](https://ollama.ai)                                | `11434`      | `llm.api.url=http://localhost:11434` |
+| [llama.cpp server](https://github.com/ggerganov/llama.cpp) | `8080`       | `llm.api.url=http://localhost:8080`  |
+| [LM Studio](https://lmstudio.ai)                           | `1234`       | `llm.api.url=http://localhost:1234`  |
+| [Jan](https://jan.ai)                                      | `1337`       | `llm.api.url=http://localhost:1337`  |
+| [vLLM](https://github.com/vllm-project/vllm)               | `8000`       | `llm.api.url=http://localhost:8000`  |
+| Any OpenAI-compatible                                      | custom       | Point `llm.api.url` at it            |
 
 ---
 
