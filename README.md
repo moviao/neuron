@@ -34,7 +34,7 @@ Browser → http://localhost:8082  (Neuron UI)
 
 ---
 
-![Neuron Chat UI](docs/screenshot.jpg)
+![Neuron Chat UI](https://raw.githubusercontent.com/moviao/neuron/refs/heads/main/docs/screenshot.png)
 
 
 
