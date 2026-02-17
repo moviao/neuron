@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  llm-chat-ui:
+    build:
+      context: .
+      dockerfile: src/main/docker/Dockerfile.jvm
+    image: llm-chat-ui:latest
+    container_name: llm-chat-ui
+    ports:
+      - "8082:8082"
+    environment:
+      - QUARKUS_HTTP_PORT=8082
+      - LLM_API_URL=http://host.docker.internal:8081
+      - LLM_API_MODEL=local-model
+      - LLM_API_MAX_TOKENS=2048
+      - LLM_API_TEMPERATURE=0.7
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8082/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+# NOTE: Your LLM server (e.g. Ollama, llama.cpp, LM Studio) should be
+# running on the HOST machine at port 8080. The container reaches it
+# via host.docker.internal:8080

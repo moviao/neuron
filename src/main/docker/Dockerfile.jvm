@@ -1,0 +1,35 @@
+####
+# Uber-jar Dockerfile for Neuron — LLM Chat UI
+#
+# Build the uber-jar first:
+#   ./gradlew build
+#   (produces build/quarkus-app/*-runner.jar)
+#
+# Build the image:
+#   docker build -f src/main/docker/Dockerfile.jvm -t moviao/neuron:latest .
+#
+# Run:
+#   docker run -d -p 8082:8082 \
+#     -e LLM_API_URL=http://host.docker.internal:8081 \
+#     moviao/neuron:latest
+####
+FROM eclipse-temurin:21-jre-alpine
+
+# Non-root user for security
+RUN addgroup -S neuron && adduser -S neuron -G neuron
+
+WORKDIR /app
+
+# Single uber-jar — all dependencies bundled inside
+COPY --chown=neuron:neuron build/*-runner.jar app.jar
+
+USER neuron
+
+EXPOSE 8082
+
+ENV JAVA_OPTS="-Dquarkus.http.host=0.0.0.0 \
+               -Djava.util.logging.manager=org.jboss.logmanager.LogManager \
+               -XX:+UseContainerSupport \
+               -XX:MaxRAMPercentage=75.0"
+
+ENTRYPOINT ["sh", "-c", "exec java $JAVA_OPTS -jar app.jar"]

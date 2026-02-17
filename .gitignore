@@ -1,0 +1,61 @@
+# ── Gradle ──────────────────────────────────────────
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# ── Quarkus ─────────────────────────────────────────
+.quarkus/
+target/
+
+# ── IDE ─────────────────────────────────────────────
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.code-workspace
+*.classpath
+*.project
+.settings/
+bin/
+
+# ── OS ──────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Java / Kotlin ────────────────────────────────────
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+hs_err_pid*
+
+# ── Logs ────────────────────────────────────────────
+*.log
+logs/
+
+# ── Environment / Secrets ────────────────────────────
+.env
+.env.local
+application-local.properties
+
+# ── Native build ─────────────────────────────────────
+*.so
+*.dylib
+*.dll
+*-runner
+
+# Docker volumes
+docker-data/
+
+# Native binary output
+*-runner
+*-runner.exe
+
+# Uber-JAR output
+*-runner.jar
+
+# TLS Certificates
+.certs/
+
